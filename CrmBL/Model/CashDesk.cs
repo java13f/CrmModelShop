@@ -29,7 +29,7 @@ namespace CrmBL.Model
         /// Максимальная очередь на кассе.
         /// Если очередь больше этого значения, то отказ клиенту
         /// </summary>
-        public int MaxQueueLenght { get; set; } = 10;
+        public int MaxQueueLenght { get; set; }
 
         /// <summary>
         /// Счетчик клиентов которые ушли, потому что была превышена очередь на кассе
@@ -51,6 +51,7 @@ namespace CrmBL.Model
             Seller = seller;
             Queue = new Queue<Cart>();
             IsModel = true;
+            MaxQueueLenght = 10;
         }
 
         /// <summary>
