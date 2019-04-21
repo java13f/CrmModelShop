@@ -8,7 +8,7 @@ namespace CrmBL.Model
 {
     public class CashDesk
     {
-        CrmContext context = new CrmContext();
+        CrmContext context;
 
         /// <summary>
         /// Номер кассы
@@ -45,13 +45,14 @@ namespace CrmBL.Model
 
         public event EventHandler<Check> CheckClosed;
 
-        public CashDesk(int number, Seller seller)
+        public CashDesk(int number, Seller seller, CrmContext context)
         {
             Number = number;
             Seller = seller;
             Queue = new Queue<Cart>();
             IsModel = true;
             MaxQueueLenght = 10;
+            this.context = context ?? new CrmContext();
         }
 
         /// <summary>
