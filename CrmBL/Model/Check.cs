@@ -17,6 +17,7 @@ namespace CrmBL.Model
 
         public DateTime Created { get; set; }
 
+        public decimal Price { get; set; }
 
         public virtual ICollection<Sell> Sells { get; set; }
 
